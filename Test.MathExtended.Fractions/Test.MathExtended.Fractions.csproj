@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{81FA4FD3-CA41-4EAD-B927-81D9363C6FFC}</ProjectGuid>
+    <ProjectGuid>{3A295B64-DD9F-467C-B57A-A078E1AE55DC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Test.MathExtended.Matrices</RootNamespace>
-    <AssemblyName>Test.MathExtended.Matrices</AssemblyName>
+    <RootNamespace>Test.MathExtended.Fractions</RootNamespace>
+    <AssemblyName>Test.MathExtended.Fractions</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -49,16 +49,16 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTestMatrix.cs" />
+    <Compile Include="UnitTestFractions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MathExtended.Matrices\MathExtended.Matrices.csproj">
-      <Project>{e477c62c-2691-45c0-b822-187c10f300fc}</Project>
-      <Name>MathExtended.Matrices</Name>
+    <ProjectReference Include="..\MathExtended.Fractions\MathExtended.Fractions.csproj">
+      <Project>{c643b8e8-e64c-427b-9fc4-bbc6f44158f4}</Project>
+      <Name>MathExtended.Fractions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

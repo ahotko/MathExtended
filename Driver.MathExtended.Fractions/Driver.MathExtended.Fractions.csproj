@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DA3C0980-915D-4F99-AE6D-437F51E5BE8A}</ProjectGuid>
+    <ProjectGuid>{8329AA8D-2070-47AF-90DA-AB3B1C2BB427}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Easings.Driver</RootNamespace>
-    <AssemblyName>Easings.Driver</AssemblyName>
+    <RootNamespace>Driver.MathExtended.Fractions</RootNamespace>
+    <AssemblyName>Driver.MathExtended.Fractions</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MathExtended.Easings\MathExtended.Easings.csproj">
-      <Project>{de044106-f22b-404b-880e-949d808b51dc}</Project>
-      <Name>MathExtended.Easings</Name>
+    <ProjectReference Include="..\MathExtended.Fractions\MathExtended.Fractions.csproj">
+      <Project>{c643b8e8-e64c-427b-9fc4-bbc6f44158f4}</Project>
+      <Name>MathExtended.Fractions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
