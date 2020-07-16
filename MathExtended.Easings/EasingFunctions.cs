@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace MathExtended.Easings
 {
@@ -186,6 +187,14 @@ namespace MathExtended.Easings
             return (x < 0.5)
                 ? (1 - BounceOut(1 - 2 * x)) / 2
                 : (1 + BounceOut(2 * x - 1)) / 2;
+        }
+
+        [MethodImplAttribute(MethodImplOptions.AggressiveInlining)]
+        public double Mapping(double x, Func<double, double> function, double xMin = 0.0, double xMax = 1.0, double yMin = 0.0, double yMax = 1.0)
+        {
+            double xCalc = (x - xMin) / (xMax - xMin);
+
+            return yMin + (yMax - yMin) * function(xCalc);
         }
     }
 }
