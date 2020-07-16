@@ -33,12 +33,12 @@ namespace Driver.MathExtended.Easings
                 int easedInOutBack = (int)(easings.EaseInOutBack(x) * maxValue);
                 int easedInOutSine = (int)(easings.EaseInOutSine(x) * maxValue);
                 
-                int easedInOutElasticMapped = (int)(easings.Mapping(i, easings.EaseInOutElastic, 0, maxValue, 0, maxValue));
+                int easedInOutElasticMapped = (int)easings.Mapping(i, easings.EaseInOutElastic, 0, maxValue, 0, maxValue);
 
                 Console.Write($"\r");
                 Console.Write($"{i,6} ");
                 Console.Write($"{easedInOutQuad,6} ");
-                Console.Write($"{ easedInOutCubic,6} ");
+                Console.Write($"{easedInOutCubic,6} ");
                 Console.Write($"{easedInOutQuart,6} ");
                 Console.Write($"{easedInOutQuint,6} ");
 
@@ -50,7 +50,7 @@ namespace Driver.MathExtended.Easings
                 Console.Write($"{easedInOutSine,6} ");
 
                 Console.Write($"{easedInOutElasticMapped,6} ");
-                Console.Write($"      ");
+
                 Thread.Sleep(10);
             }
 

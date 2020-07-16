@@ -17,6 +17,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.MathExtended.Fractio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MathExtended.Fractions", "Test.MathExtended.Fractions\Test.MathExtended.Fractions.csproj", "{3A295B64-DD9F-467C-B57A-A078E1AE55DC}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathExtended.Random", "MathExtended.Random\MathExtended.Random.csproj", "{7E84E635-5F9E-431D-B787-63A72DC26C70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.MathExtended.Random", "Driver.MathExtended.Random\Driver.MathExtended.Random.csproj", "{2B4F517A-F6AC-40B6-88E7-3C34BC05EC01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MathExtended.Random", "Test.MathExtended.Random\Test.MathExtended.Random.csproj", "{B2980F0C-0B89-420E-800A-B3FE19E99A8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +57,18 @@ Global
 		{3A295B64-DD9F-467C-B57A-A078E1AE55DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A295B64-DD9F-467C-B57A-A078E1AE55DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A295B64-DD9F-467C-B57A-A078E1AE55DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E84E635-5F9E-431D-B787-63A72DC26C70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E84E635-5F9E-431D-B787-63A72DC26C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E84E635-5F9E-431D-B787-63A72DC26C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E84E635-5F9E-431D-B787-63A72DC26C70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B4F517A-F6AC-40B6-88E7-3C34BC05EC01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B4F517A-F6AC-40B6-88E7-3C34BC05EC01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B4F517A-F6AC-40B6-88E7-3C34BC05EC01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B4F517A-F6AC-40B6-88E7-3C34BC05EC01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2980F0C-0B89-420E-800A-B3FE19E99A8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2980F0C-0B89-420E-800A-B3FE19E99A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2980F0C-0B89-420E-800A-B3FE19E99A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2980F0C-0B89-420E-800A-B3FE19E99A8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
