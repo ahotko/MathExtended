@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Easings\Easings.csproj">
+    <ProjectReference Include="..\Easings\MathExtended.Easings.csproj">
       <Project>{de044106-f22b-404b-880e-949d808b51dc}</Project>
-      <Name>Easings</Name>
+      <Name>MathExtended.Easings</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
