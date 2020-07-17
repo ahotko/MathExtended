@@ -8,6 +8,18 @@ namespace Driver.MathExtended.Easings
 {
     class Program
     {
+        private static string StarPosition(double x, double maxValue)
+        {
+            if (x < 0)  x = 0;
+            if (x > maxValue)  x = maxValue;
+
+            int width = Console.BufferWidth - 15;
+            int starPos = (int)Math.Round(width * x / maxValue);
+
+            string line = new string(' ', Console.BufferWidth - 15);
+            return line.Substring(0, starPos) + "*" + line.Substring(starPos, line.Length - starPos);
+        }
+
         static void Main(string[] args)
         {
             const int maxValue = 1000;
@@ -37,6 +49,8 @@ namespace Driver.MathExtended.Easings
 
                 int easedInOutElasticMapped = (int)Mapping.Map(easings.EaseInOutElastic(x), 0.0, 1.0, 0.0, maxValue);
 
+                Console.CursorTop = 2;
+
                 Console.Write($"\r");
                 Console.Write($"{i,6} ");
                 Console.Write($"{easedInOutQuad,6} ");
@@ -52,6 +66,24 @@ namespace Driver.MathExtended.Easings
                 Console.Write($"{easedInOutSine,6} ");
 
                 Console.Write($"{easedInOutElasticMapped,6} ");
+
+                Console.WriteLine();
+                Console.WriteLine($"===================================================================================");
+
+                Console.WriteLine();
+
+                Console.WriteLine($"\rLinear    : {StarPosition(x, 1)}");
+                Console.WriteLine($"\rInOutQuad : {StarPosition(easedInOutQuad, maxValue)}");
+                Console.WriteLine($"\rInOutCubic: {StarPosition(easedInOutCubic, maxValue)}");
+                Console.WriteLine($"\rInOutQuart: {StarPosition(easedInOutQuart, maxValue)}");
+                Console.WriteLine($"\rInOutQuint: {StarPosition(easedInOutQuint, maxValue)}");
+
+                Console.WriteLine($"\rInOutBounc: {StarPosition(easedInOutBounce, maxValue)}");
+                Console.WriteLine($"\rInOutElast: {StarPosition(easedInOutElastic, maxValue)}");
+                Console.WriteLine($"\rInOutExpo : {StarPosition(easedInOutExpo, maxValue)}");
+                Console.WriteLine($"\rInOutCirc : {StarPosition(easedInOutCirc, maxValue)}");
+                Console.WriteLine($"\rInOutBack : {StarPosition(easedInOutBack, maxValue)}");
+                Console.WriteLine($"\rInOutSine : {StarPosition(easedInOutSine, maxValue)}");
 
                 Thread.Sleep(10);
             }
