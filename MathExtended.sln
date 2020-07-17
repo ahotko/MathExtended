@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.MathExtended.Random"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MathExtended.Random", "Test.MathExtended.Random\Test.MathExtended.Random.csproj", "{B2980F0C-0B89-420E-800A-B3FE19E99A8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathExtended.ComplexNumbers", "MathExtended.ComplexNumbers\MathExtended.ComplexNumbers.csproj", "{1F45A5B7-992A-46A7-903C-54AF3FBBC688}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MathExtended.ComplexNumbers", "Test.MathExtended.ComplexNumbers\Test.MathExtended.ComplexNumbers.csproj", "{61EC0DDE-D72A-4CB0-8F28-F7595A826565}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{B2980F0C-0B89-420E-800A-B3FE19E99A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2980F0C-0B89-420E-800A-B3FE19E99A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2980F0C-0B89-420E-800A-B3FE19E99A8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F45A5B7-992A-46A7-903C-54AF3FBBC688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F45A5B7-992A-46A7-903C-54AF3FBBC688}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F45A5B7-992A-46A7-903C-54AF3FBBC688}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F45A5B7-992A-46A7-903C-54AF3FBBC688}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61EC0DDE-D72A-4CB0-8F28-F7595A826565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61EC0DDE-D72A-4CB0-8F28-F7595A826565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61EC0DDE-D72A-4CB0-8F28-F7595A826565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61EC0DDE-D72A-4CB0-8F28-F7595A826565}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
