@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DA3C0980-915D-4F99-AE6D-437F51E5BE8A}</ProjectGuid>
+    <ProjectGuid>{11738C56-6301-40D6-879F-8FE7EF6D1A19}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Easings.Driver</RootNamespace>
-    <AssemblyName>Easings.Driver</AssemblyName>
+    <RootNamespace>Driver.MathExtended.Interpolations</RootNamespace>
+    <AssemblyName>Driver.MathExtended.Interpolations</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,9 +54,9 @@
       <Project>{b5dc5548-8457-4e2e-96ca-21cea05fa685}</Project>
       <Name>MathExtended.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MathExtended.Easings\MathExtended.Easings.csproj">
-      <Project>{de044106-f22b-404b-880e-949d808b51dc}</Project>
-      <Name>MathExtended.Easings</Name>
+    <ProjectReference Include="..\MathExtended.Interpolations\MathExtended.Interpolations.csproj">
+      <Project>{2c193197-459e-480b-b875-a389434a5ac9}</Project>
+      <Name>MathExtended.Interpolations</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

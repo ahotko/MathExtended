@@ -1,6 +1,8 @@
 ﻿using MathExtended.Easings;
 using System;
+using System.Data;
 using System.Threading;
+using MathExtended.Common;
 
 namespace Driver.MathExtended.Easings
 {
@@ -32,8 +34,8 @@ namespace Driver.MathExtended.Easings
                 int easedInOutCirc = (int)(easings.EaseInOutCirc(x) * maxValue);
                 int easedInOutBack = (int)(easings.EaseInOutBack(x) * maxValue);
                 int easedInOutSine = (int)(easings.EaseInOutSine(x) * maxValue);
-                
-                int easedInOutElasticMapped = (int)easings.Mapping(i, easings.EaseInOutElastic, 0, maxValue, 0, maxValue);
+
+                int easedInOutElasticMapped = (int)Mapping.Map(easings.EaseInOutElastic(x), 0.0, 1.0, 0.0, maxValue);
 
                 Console.Write($"\r");
                 Console.Write($"{i,6} ");

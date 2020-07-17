@@ -23,9 +23,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.MathExtended.Random"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MathExtended.Random", "Test.MathExtended.Random\Test.MathExtended.Random.csproj", "{B2980F0C-0B89-420E-800A-B3FE19E99A8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathExtended.ComplexNumbers", "MathExtended.ComplexNumbers\MathExtended.ComplexNumbers.csproj", "{1F45A5B7-992A-46A7-903C-54AF3FBBC688}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathExtended.ComplexNumbers", "MathExtended.ComplexNumbers\MathExtended.ComplexNumbers.csproj", "{1F45A5B7-992A-46A7-903C-54AF3FBBC688}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MathExtended.ComplexNumbers", "Test.MathExtended.ComplexNumbers\Test.MathExtended.ComplexNumbers.csproj", "{61EC0DDE-D72A-4CB0-8F28-F7595A826565}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathExtended.Common", "MathExtended.Common\MathExtended.Common.csproj", "{B5DC5548-8457-4E2E-96CA-21CEA05FA685}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathExtended.Interpolations", "MathExtended.Interpolations\MathExtended.Interpolations.csproj", "{2C193197-459E-480B-B875-A389434A5AC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.MathExtended.Interpolations", "Driver.MathExtended.Interpolations\Driver.MathExtended.Interpolations.csproj", "{11738C56-6301-40D6-879F-8FE7EF6D1A19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MathExtended.Interpolations", "Test.MathExtended.Interpolations\Test.MathExtended.Interpolations.csproj", "{5C628567-0D32-40DF-9D88-115A3FCCA45C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +89,22 @@ Global
 		{61EC0DDE-D72A-4CB0-8F28-F7595A826565}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61EC0DDE-D72A-4CB0-8F28-F7595A826565}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61EC0DDE-D72A-4CB0-8F28-F7595A826565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5DC5548-8457-4E2E-96CA-21CEA05FA685}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5DC5548-8457-4E2E-96CA-21CEA05FA685}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5DC5548-8457-4E2E-96CA-21CEA05FA685}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5DC5548-8457-4E2E-96CA-21CEA05FA685}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C193197-459E-480B-B875-A389434A5AC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C193197-459E-480B-B875-A389434A5AC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C193197-459E-480B-B875-A389434A5AC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C193197-459E-480B-B875-A389434A5AC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11738C56-6301-40D6-879F-8FE7EF6D1A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11738C56-6301-40D6-879F-8FE7EF6D1A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11738C56-6301-40D6-879F-8FE7EF6D1A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11738C56-6301-40D6-879F-8FE7EF6D1A19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C628567-0D32-40DF-9D88-115A3FCCA45C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C628567-0D32-40DF-9D88-115A3FCCA45C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C628567-0D32-40DF-9D88-115A3FCCA45C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C628567-0D32-40DF-9D88-115A3FCCA45C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
