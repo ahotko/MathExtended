@@ -1,4 +1,4 @@
-﻿namespace MathExtended.Interpolation.Regressions
+﻿namespace MathExtended.Regressions
 {
     public interface IRegression
     {
