@@ -35,6 +35,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.MathExtended.Interpo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MathExtended.Interpolations", "Test.MathExtended.Interpolations\Test.MathExtended.Interpolations.csproj", "{5C628567-0D32-40DF-9D88-115A3FCCA45C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathExtended.Regressions", "MathExtended.Regressions\MathExtended.Regressions.csproj", "{B036EBEF-9CE5-4F18-B044-DBEA4D2C8DB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.MathExtended.Regressions", "Driver.MathExtended.Regressions\Driver.MathExtended.Regressions.csproj", "{32433DD1-4887-4300-9FBE-F19670E0BC3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +109,14 @@ Global
 		{5C628567-0D32-40DF-9D88-115A3FCCA45C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C628567-0D32-40DF-9D88-115A3FCCA45C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C628567-0D32-40DF-9D88-115A3FCCA45C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B036EBEF-9CE5-4F18-B044-DBEA4D2C8DB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B036EBEF-9CE5-4F18-B044-DBEA4D2C8DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B036EBEF-9CE5-4F18-B044-DBEA4D2C8DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B036EBEF-9CE5-4F18-B044-DBEA4D2C8DB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32433DD1-4887-4300-9FBE-F19670E0BC3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32433DD1-4887-4300-9FBE-F19670E0BC3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32433DD1-4887-4300-9FBE-F19670E0BC3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32433DD1-4887-4300-9FBE-F19670E0BC3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
