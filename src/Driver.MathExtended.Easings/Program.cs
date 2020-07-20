@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Threading;
 using MathExtended.Common;
+using System.Text;
 
 namespace Driver.MathExtended.Easings
 {
@@ -10,13 +11,15 @@ namespace Driver.MathExtended.Easings
     {
         private static string StarPosition(double x, double maxValue)
         {
-            if (x < 0)  x = 0;
-            if (x > maxValue)  x = maxValue;
+            int bufferWidth = 10;
+            int maxWidth = Console.BufferWidth - 15;
+            int spanWidth = maxWidth - 2 * bufferWidth;
 
-            int width = Console.BufferWidth - 15;
-            int starPos = (int)Math.Round(width * x / maxValue);
+            int starPos = (int)Math.Round(spanWidth * x / maxValue) + bufferWidth;
+            if (starPos < 0) starPos = 0;
+            if (starPos > maxWidth) starPos = maxWidth;
 
-            string line = new string(' ', Console.BufferWidth - 15);
+            string line = new string(' ', maxWidth);
             return line.Substring(0, starPos) + "*" + line.Substring(starPos, line.Length - starPos);
         }
 
@@ -25,6 +28,8 @@ namespace Driver.MathExtended.Easings
             const int maxValue = 1000;
 
             var easings = new EasingFunctions();
+
+            Console.OutputEncoding = Encoding.UTF8;
 
             Console.CursorVisible = false;
 
@@ -85,7 +90,7 @@ namespace Driver.MathExtended.Easings
                 Console.WriteLine($"\rInOutBack : {StarPosition(easedInOutBack, maxValue)}");
                 Console.WriteLine($"\rInOutSine : {StarPosition(easedInOutSine, maxValue)}");
 
-                Thread.Sleep(10);
+                Thread.Sleep(5);
             }
 
             Console.CursorVisible = true;
