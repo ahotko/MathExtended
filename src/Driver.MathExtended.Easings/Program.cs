@@ -1,9 +1,8 @@
-﻿using MathExtended.Easings;
+﻿using MathExtended.Common;
+using MathExtended.Easings;
 using System;
-using System.Data;
-using System.Threading;
-using MathExtended.Common;
 using System.Text;
+using System.Threading;
 
 namespace Driver.MathExtended.Easings
 {
@@ -11,7 +10,7 @@ namespace Driver.MathExtended.Easings
     {
         private static string StarPosition(double x, double maxValue)
         {
-            int bufferWidth = 10;
+            int bufferWidth = 15;
             int maxWidth = Console.BufferWidth - 15;
             int spanWidth = maxWidth - 2 * bufferWidth;
 
