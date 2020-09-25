@@ -35,13 +35,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.MathExtended.Interpo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MathExtended.Interpolations", "Test.MathExtended.Interpolations\Test.MathExtended.Interpolations.csproj", "{5C628567-0D32-40DF-9D88-115A3FCCA45C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathExtended.Regressions", "MathExtended.Regressions\MathExtended.Regressions.csproj", "{B036EBEF-9CE5-4F18-B044-DBEA4D2C8DB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathExtended.Regressions", "MathExtended.Regressions\MathExtended.Regressions.csproj", "{B036EBEF-9CE5-4F18-B044-DBEA4D2C8DB6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.MathExtended.Regressions", "Driver.MathExtended.Regressions\Driver.MathExtended.Regressions.csproj", "{32433DD1-4887-4300-9FBE-F19670E0BC3A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Drivers", "Drivers", "{27624CA6-4275-40C7-ADB6-2A373085B477}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{61DD3C31-2F84-4B40-88F2-AF360B265202}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathExtended.Statistics", "MathExtended.Statistics\MathExtended.Statistics.csproj", "{7F2BC9FD-3FFC-4153-A2DE-83B254BCBC55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MathExtended.Statistics", "Test.MathExtended.Statistics\Test.MathExtended.Statistics.csproj", "{49985F76-ABCA-4073-A156-610187F428BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.MathExtended.Statistics", "Driver.MathExtended.Statistics\Driver.MathExtended.Statistics.csproj", "{F941248B-46A5-464A-B020-1DCD19B3B223}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +127,18 @@ Global
 		{32433DD1-4887-4300-9FBE-F19670E0BC3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32433DD1-4887-4300-9FBE-F19670E0BC3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32433DD1-4887-4300-9FBE-F19670E0BC3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F2BC9FD-3FFC-4153-A2DE-83B254BCBC55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F2BC9FD-3FFC-4153-A2DE-83B254BCBC55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F2BC9FD-3FFC-4153-A2DE-83B254BCBC55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F2BC9FD-3FFC-4153-A2DE-83B254BCBC55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49985F76-ABCA-4073-A156-610187F428BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49985F76-ABCA-4073-A156-610187F428BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49985F76-ABCA-4073-A156-610187F428BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49985F76-ABCA-4073-A156-610187F428BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F941248B-46A5-464A-B020-1DCD19B3B223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F941248B-46A5-464A-B020-1DCD19B3B223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F941248B-46A5-464A-B020-1DCD19B3B223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F941248B-46A5-464A-B020-1DCD19B3B223}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,6 +154,8 @@ Global
 		{11738C56-6301-40D6-879F-8FE7EF6D1A19} = {27624CA6-4275-40C7-ADB6-2A373085B477}
 		{5C628567-0D32-40DF-9D88-115A3FCCA45C} = {61DD3C31-2F84-4B40-88F2-AF360B265202}
 		{32433DD1-4887-4300-9FBE-F19670E0BC3A} = {27624CA6-4275-40C7-ADB6-2A373085B477}
+		{49985F76-ABCA-4073-A156-610187F428BC} = {61DD3C31-2F84-4B40-88F2-AF360B265202}
+		{F941248B-46A5-464A-B020-1DCD19B3B223} = {27624CA6-4275-40C7-ADB6-2A373085B477}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {02FD1503-111C-4062-842F-6136172AF0D1}
