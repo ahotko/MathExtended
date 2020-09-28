@@ -12,20 +12,21 @@ namespace MathExtended.Statistics
         BinWidth,
         SquareRoot,
         Sturges,
-        RiceRule
+        RiceRule,
+        ScottsNormalReferenceRule
     }
 
     public class Histogram
     {
-        private Distribution _distribution;
         private List<double> _values;
 
         public int BinCount { get; private set; }
         public double BinWidth { get; private set; }
+        public Distribution Distribution { get; private set; }
 
         public Histogram()
         {
-            _distribution = new Distribution();
+            Distribution = new Distribution();
             _values = new List<double>();
         }
 
@@ -37,21 +38,22 @@ namespace MathExtended.Statistics
         public void AddRange(IEnumerable<double> values)
         {
             _values.AddRange(values);
-            _distribution.AddRange(values);
+            Distribution.AddRange(values);
         }
 
         public void Clear()
         {
             _values.Clear();
-            _distribution.Clear();
+            Distribution.Clear();
 
             BinCount = 0;
             BinWidth = 0.0;
         }
 
-        private int CalculateBinCount(double width = 0.0)
+        private int CalculateBinCount()
         {
-            return (int)Math.Ceiling((_distribution.MaxValue - _distribution.MinValue) / width);
+            if (BinWidth <= 0.0) throw new ArgumentOutOfRangeException(nameof(BinWidth));
+            return (int)Math.Ceiling((Distribution.MaxValue - Distribution.MinValue) / BinWidth);
         }
 
         private int CalculateBinCount(NumberOfBins bins)
@@ -61,11 +63,14 @@ namespace MathExtended.Statistics
             switch (bins)
             {
                 case NumberOfBins.BinWidth:
-                    return CalculateBinCount(3);
+                    return CalculateBinCount();
                 case NumberOfBins.Sturges:
                     return (int)Math.Ceiling(Math.Log(n) / Math.Log(2)) + 1;
                 case NumberOfBins.RiceRule:
                     return (int)Math.Ceiling(2.0 * Math.Pow(n, 1.0 / 3.0));
+                case NumberOfBins.ScottsNormalReferenceRule:
+                    BinWidth = 3.49 * Distribution.StandardDeviation / Math.Pow(n, 1.0 / 3.0);
+                    return CalculateBinCount();
                 case NumberOfBins.SquareRoot:
                 case NumberOfBins.Default:
                 default:
@@ -78,7 +83,7 @@ namespace MathExtended.Statistics
             BinCount = CalculateBinCount(bins);
             if (bins != NumberOfBins.BinWidth)
             {
-                BinWidth = (_distribution.MaxValue - _distribution.MinValue) / BinCount;
+                BinWidth = (Distribution.MaxValue - Distribution.MinValue) / BinCount;
             }
 
             var result = new int[BinCount];
@@ -86,7 +91,7 @@ namespace MathExtended.Statistics
 
             foreach (double x in _values)
             {
-                int index = (int)Math.Floor((x - _distribution.MinValue) / BinWidth);
+                int index = (int)Math.Floor((x - Distribution.MinValue) / BinWidth);
                 if (index == BinCount) index--;
                 result[index]++;
             }
