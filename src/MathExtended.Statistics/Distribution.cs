@@ -6,11 +6,13 @@ namespace MathExtended.Statistics
     public class Distribution
     {
         private double _sumOfSquares;
+        private double _sumOfCubes;
         private double _sum;
 
         public void Clear()
         {
             _sumOfSquares = 0.0;
+            _sumOfCubes = 0.0;
             _sum = 0.0;
             Count = 0;
             MaxValue = double.MinValue;
@@ -31,6 +33,7 @@ namespace MathExtended.Statistics
         {
             _sum += value;
             _sumOfSquares += Math.Pow(value, 2);
+            _sumOfCubes += Math.Pow(value, 3);
             Count++;
             //
             if (value < MinValue) MinValue = value;
@@ -48,6 +51,50 @@ namespace MathExtended.Statistics
                 double average = Average; //so it's calculated only once
 
                 return Math.Sqrt((Count * Math.Pow(average, 2) - 2 * average * _sum + _sumOfSquares) / (Count - 1));
+            }
+        }
+
+        public double Variance
+        {
+            get
+            {
+                if (Count < 2) return double.NaN;
+
+                double average = Average; //so it's calculated only once
+
+                return ((Count * Math.Pow(average, 2) - 2 * average * _sum + _sumOfSquares) / Count);
+            }
+        }
+
+        public double ThirdMoment
+        {
+            get
+            {
+                if (Count < 2) return double.NaN;
+
+                double average = Average; //so it's calculated only once
+
+                return (_sumOfCubes - 3.0 * average * _sumOfSquares + 3.0 * Math.Pow(average, 2) * _sum - Count * Math.Pow(average, 3)) / Count;
+            }
+        }
+
+        public double Skewness
+        {
+            get
+            {
+                if (Count < 2) return double.NaN;
+
+                return ThirdMoment / Math.Sqrt(Math.Pow(Variance, 3));
+            }
+        }
+
+        public double SampleSkewness
+        {
+            get
+            {
+                if (Count < 2) return double.NaN;
+
+                return Skewness * Math.Sqrt(Count * (Count - 1)) / (Count - 2);
             }
         }
 

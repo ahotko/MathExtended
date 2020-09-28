@@ -42,5 +42,32 @@ namespace Test.MathExtended.Statistics
             Assert.AreEqual(0.009477931, distribution.Gauss(0), 0.0001);
             Assert.AreEqual(0.061803873, distribution.Gauss(12.5), 0.0001);
         }
+
+        [TestMethod]
+        public void TestVariance()
+        {
+            var distribution = new Distribution();
+            distribution.AddRange(new double[] { 5.0, 10.0, 15.0, 20.0, 21.0 });
+
+            Assert.AreEqual(36.56, distribution.Variance, 0.1);
+        }
+
+        [TestMethod]
+        public void TestSkewness()
+        {
+            var distribution = new Distribution();
+            distribution.AddRange(new double[] { 5.0, 10.0, 15.0, 20.0, 21.0 });
+
+            Assert.AreEqual(-0.46, distribution.Skewness, 0.1);
+        }
+
+        [TestMethod]
+        public void TestSampleSkewness()
+        {
+            var distribution = new Distribution();
+            distribution.AddRange(new double[] { 5.0, 10.0, 15.0, 20.0, 21.0 });
+
+            Assert.AreEqual(-0.28, distribution.SampleSkewness, 0.2);
+        }
     }
 }

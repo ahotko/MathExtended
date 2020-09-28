@@ -19,6 +19,5 @@ namespace Test.MathExtended.Statistics
             Assert.AreEqual(8, histogram.BinCount);
         }
 
-
     }
 }

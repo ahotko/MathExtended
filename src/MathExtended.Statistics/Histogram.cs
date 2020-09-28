@@ -1,18 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MathExtended.Statistics
 {
+    /// <summary>
+    /// Enum for calculating number of bins in histogram
+    /// </summary>
     public enum NumberOfBins
     {
+        /// <summary>
+        /// Calculate number of bins using the default method (Square Root Method)
+        /// </summary>
         Default,
+
+        /// <summary>
+        /// Calculate number of bins using bin width and max and min values
+        /// </summary>
         BinWidth,
+
+        /// <summary>
+        /// Calculate number of bins using square root method (this is default method)
+        /// </summary>
         SquareRoot,
+
+        /// <summary>
+        /// Calculate number of bins using Sturges' formula
+        /// </summary>
         Sturges,
+
+        /// <summary>
+        /// Calculate number of bins using Rice rule
+        /// </summary>
         RiceRule,
+
+        /// <summary>
+        /// Calculate number of bins using Scott's normal reference rule
+        /// </summary>
         ScottsNormalReferenceRule
     }
 
