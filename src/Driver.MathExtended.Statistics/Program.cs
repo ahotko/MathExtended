@@ -22,6 +22,8 @@ namespace Driver.MathExtended.Statistics
             Console.WriteLine($"===============================================================");
             Console.WriteLine(sb.ToString());
             Console.WriteLine($"===============================================================");
+            Console.WriteLine($"n             bin\u2265         bin\u2264          Count");
+            Console.WriteLine($"===============================================================");
 
             var histo = histogram.Generate(bins, cumulative);
 
@@ -32,7 +34,7 @@ namespace Driver.MathExtended.Statistics
                 double binFrom = histogram.Distribution.MinValue + bin * histogram.BinWidth;
                 double binTo = histogram.Distribution.MinValue + (bin + 1) * histogram.BinWidth;
 
-                Console.WriteLine($"{bin}   {binFrom:N3}   {binTo:N3}     {histo[bin]}");
+                Console.WriteLine($"{bin,-5}   {binFrom,10:N3}   {binTo,10:N3}     {histo[bin],10}");
                 bin++;
             }
         }
@@ -50,6 +52,7 @@ namespace Driver.MathExtended.Statistics
             for (int n = 0; n < count; n++)
             {
                 _testArray[n] = random.NextGaussian() * 15;
+                //_testArray[n] = random.NextDouble() * 15;
             }
 
             var histogram = new Histogram();
