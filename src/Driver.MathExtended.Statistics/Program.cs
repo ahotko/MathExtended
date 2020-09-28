@@ -1,5 +1,6 @@
 ﻿using MathExtended.Statistics;
 using System;
+using System.Text;
 
 namespace Driver.MathExtended.Statistics
 {
@@ -7,8 +8,19 @@ namespace Driver.MathExtended.Statistics
     {
         private static void GenerateHistogram(Histogram histogram, NumberOfBins bins, bool cumulative = false)
         {
+            var sb = new StringBuilder((cumulative ? "Cumulative " : ""));
+            sb.Append(bins).Append(", ");
+            sb.Append($"{histogram.Distribution.Count} elements, ");
+            sb.Append($"x\u0305 = {histogram.Distribution.Average:N3}, ");
+            sb.Append($"\u03C3 = {histogram.Distribution.StandardDeviation:N3}, ");
+            sb.Append($"Variance = {histogram.Distribution.Variance:N3}, ");
+            sb.AppendLine($"Skewness = {histogram.Distribution.Skewness:N3}");
+            sb.Append($"m\u2081 = {histogram.Distribution.FirstMoment:N3}, ");
+            sb.Append($"m\u2082 = {histogram.Distribution.SecondMoment:N3}, ");
+            sb.Append($"m\u2083 = {histogram.Distribution.ThirdMoment:N3} ");
+
             Console.WriteLine($"===============================================================");
-            Console.WriteLine($"{(cumulative ? "Cumulative " : "")}{bins}, {histogram.Distribution.Count} elements");
+            Console.WriteLine(sb.ToString());
             Console.WriteLine($"===============================================================");
 
             var histo = histogram.Generate(bins, cumulative);
@@ -17,8 +29,8 @@ namespace Driver.MathExtended.Statistics
 
             foreach (var value in histo)
             {
-                double binFrom = bin * histogram.BinWidth;
-                double binTo = (bin + 1) * histogram.BinWidth;
+                double binFrom = histogram.Distribution.MinValue + bin * histogram.BinWidth;
+                double binTo = histogram.Distribution.MinValue + (bin + 1) * histogram.BinWidth;
 
                 Console.WriteLine($"{bin}   {binFrom:N3}   {binTo:N3}     {histo[bin]}");
                 bin++;
@@ -27,6 +39,8 @@ namespace Driver.MathExtended.Statistics
 
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             var random = new Random();
 
             int count = random.Next(500, 1500);

@@ -58,7 +58,7 @@ namespace Test.MathExtended.Statistics
             var distribution = new Distribution();
             distribution.AddRange(new double[] { 5.0, 10.0, 15.0, 20.0, 21.0 });
 
-            Assert.AreEqual(-0.46, distribution.Skewness, 0.1);
+            Assert.AreEqual(-0.31, distribution.Skewness, 0.01);
         }
 
         [TestMethod]
@@ -67,7 +67,7 @@ namespace Test.MathExtended.Statistics
             var distribution = new Distribution();
             distribution.AddRange(new double[] { 5.0, 10.0, 15.0, 20.0, 21.0 });
 
-            Assert.AreEqual(-0.28, distribution.SampleSkewness, 0.2);
+            Assert.AreEqual(-0.46, distribution.SampleSkewness, 0.01);
         }
     }
 }

@@ -58,7 +58,7 @@ namespace MathExtended.Statistics
         {
             get
             {
-                if (Count < 2) return double.NaN;
+                if (Count < 1) return double.NaN;
 
                 double average = Average; //so it's calculated only once
 
@@ -66,11 +66,31 @@ namespace MathExtended.Statistics
             }
         }
 
+        public double FirstMoment
+        {
+            get
+            {
+                if (Count < 1) return double.NaN;
+
+                double average = Average; //so it's calculated only once
+
+                return (_sum - Count * average) / Count;
+            }
+        }
+
+        public double SecondMoment
+        {
+            get
+            {
+                return Variance;
+            }
+        }
+
         public double ThirdMoment
         {
             get
             {
-                if (Count < 2) return double.NaN;
+                if (Count < 1) return double.NaN;
 
                 double average = Average; //so it's calculated only once
 
@@ -82,7 +102,7 @@ namespace MathExtended.Statistics
         {
             get
             {
-                if (Count < 2) return double.NaN;
+                if (Count < 1) return double.NaN;
 
                 return ThirdMoment / Math.Sqrt(Math.Pow(Variance, 3));
             }
@@ -92,9 +112,11 @@ namespace MathExtended.Statistics
         {
             get
             {
-                if (Count < 2) return double.NaN;
+                if (Count <= 2) return double.NaN;
 
-                return Skewness * Math.Sqrt(Count * (Count - 1)) / (Count - 2);
+                double sampleFactor = Math.Sqrt(Count * (Count - 1)) / (Count - 2);
+
+                return Skewness * sampleFactor;
             }
         }
 
