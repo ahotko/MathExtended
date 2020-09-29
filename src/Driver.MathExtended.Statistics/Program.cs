@@ -22,7 +22,7 @@ namespace Driver.MathExtended.Statistics
             Console.WriteLine($"===============================================================");
             Console.WriteLine(sb.ToString());
             Console.WriteLine($"===============================================================");
-            Console.WriteLine($"n             bin\u2265         bin\u2264          Count");
+            Console.WriteLine($"n            bin \u2265        bin \u2264          Count       ");
             Console.WriteLine($"===============================================================");
 
             var histo = histogram.Generate(bins, cumulative);
@@ -52,6 +52,7 @@ namespace Driver.MathExtended.Statistics
             for (int n = 0; n < count; n++)
             {
                 _testArray[n] = random.NextGaussian() * 15;
+                //_testArray[n] = random.NextTriangular(0,1,2) * 15;
                 //_testArray[n] = random.NextDouble() * 15;
             }
 
