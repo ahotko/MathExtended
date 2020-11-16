@@ -23,7 +23,6 @@ namespace Test.MathExtended.Statistics
             histogramRice = _histogram.Generate(NumberOfBins.RiceRule);
             histogramScott = _histogram.Generate(NumberOfBins.ScottsNormalReferenceRule);
             histogramSturges = _histogram.Generate(NumberOfBins.Sturges);
-
         }
 
         [TestMethod]
