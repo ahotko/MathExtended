@@ -2,7 +2,7 @@
 
 Pure C# MathLibrary.
 
-## Legal information and credits
+# Legal information and credits
 
 MathExtended is project by Ales Hotko and was first released in 2020. It's licensed under the MIT license.
 
@@ -14,27 +14,134 @@ MathExtended is project by Ales Hotko and was first released in 2020. It's licen
 
 
 
-## Libraries
+# Libraries
 
-### Complex Numbers
+## Common
+
+### Clamping
+
+<details>
+<summary>Code Example with Output</summary>
+<p>
+
+```csharp
+for (double x = -0.5; x <= 1.5; x += 0.1)
+{
+    double clampDefault = Clamping.Clamp(x);
+    double clampLimited = Clamping.Clamp(x, -2.0, 1.5);
+    double smoothStep = Clamping.SmoothStep(x); //same as SmoothStep3
+    double smoothStep3 = Clamping.SmoothStep3(x);
+    double smoothStep5 = Clamping.SmoothStep5(x);
+    double smoothStep7 = Clamping.SmoothStep7(x);
+    double smootherStep = Clamping.SmootherStep(x);
+
+    Console.WriteLine();
+    Console.WriteLine($"Clamping.Clamp({x:N1}) = {clampDefault:N3}");
+    Console.WriteLine($"Clamping.Clamp({x:N1}, -2.0, 1.5) = {clampLimited:N3}");
+    Console.WriteLine($"Clamping.SmoothStep({x:N1}) = {smoothStep:N3}");
+    Console.WriteLine($"Clamping.SmoothStep3({x:N1}) = {smoothStep3:N3}");
+    Console.WriteLine($"Clamping.SmoothStep5({x:N1}) = {smoothStep5:N3}");
+    Console.WriteLine($"Clamping.SmoothStep7({x:N1}) = {smoothStep7:N3}");
+    Console.WriteLine($"Clamping.SmootherStep({x:N1}) = {smootherStep:N3}");
+}
+
+// The Output is:
+// Clamping.Clamp(-0.1) = 0.000
+// Clamping.Clamp(-0.1, -2.0, 1.5) = -0.100
+// Clamping.SmoothStep(-0.1) = 0.000
+// Clamping.SmoothStep3(-0.1) = 0.000
+// Clamping.SmoothStep5(-0.1) = 0.000
+// Clamping.SmoothStep7(-0.1) = 0.000
+// Clamping.SmootherStep(-0.1) = 0.000
+// 
+// Clamping.Clamp(0.0) = 0.000
+// Clamping.Clamp(0.0, -2.0, 1.5) = 0.000
+// Clamping.SmoothStep(0.0) = 0.000
+// Clamping.SmoothStep3(0.0) = 0.000
+// Clamping.SmoothStep5(0.0) = 0.000
+// Clamping.SmoothStep7(0.0) = 0.000
+// Clamping.SmootherStep(0.0) = 0.000
+// 
+// Clamping.Clamp(0.1) = 0.100
+// Clamping.Clamp(0.1, -2.0, 1.5) = 0.100
+// Clamping.SmoothStep(0.1) = 0.028
+// Clamping.SmoothStep3(0.1) = 0.028
+// Clamping.SmoothStep5(0.1) = 0.009
+// Clamping.SmoothStep7(0.1) = 0.003
+// Clamping.SmootherStep(0.1) = 0.009
+// 
+// Clamping.Clamp(0.2) = 0.200
+// Clamping.Clamp(0.2, -2.0, 1.5) = 0.200
+// Clamping.SmoothStep(0.2) = 0.104
+// Clamping.SmoothStep3(0.2) = 0.104
+// Clamping.SmoothStep5(0.2) = 0.058
+// Clamping.SmoothStep7(0.2) = 0.033
+// Clamping.SmootherStep(0.2) = 0.058
+// ...
+// Clamping.Clamp(0.9) = 0.900
+// Clamping.Clamp(0.9, -2.0, 1.5) = 0.900
+// Clamping.SmoothStep(0.9) = 0.972
+// Clamping.SmoothStep3(0.9) = 0.972
+// Clamping.SmoothStep5(0.9) = 0.991
+// Clamping.SmoothStep7(0.9) = 0.997
+// Clamping.SmootherStep(0.9) = 0.991
+// 
+// Clamping.Clamp(1.0) = 1.000
+// Clamping.Clamp(1.0, -2.0, 1.5) = 1.000
+// Clamping.SmoothStep(1.0) = 1.000
+// Clamping.SmoothStep3(1.0) = 1.000
+// Clamping.SmoothStep5(1.0) = 1.000
+// Clamping.SmoothStep7(1.0) = 1.000
+// Clamping.SmootherStep(1.0) = 1.000
+// 
+// Clamping.Clamp(1.1) = 1.000
+// Clamping.Clamp(1.1, -2.0, 1.5) = 1.100
+// Clamping.SmoothStep(1.1) = 1.000
+// Clamping.SmoothStep3(1.1) = 1.000
+// Clamping.SmoothStep5(1.1) = 1.000
+// Clamping.SmoothStep7(1.1) = 1.000
+// Clamping.SmootherStep(1.1) = 1.000
+```
+
+</p>
+</details>
+
+
+### Mapping
+
+```csharp
+
+```
 
 
 
-### Matrices
+### Wrapping
 
-#### Creating
+```csharp
 
-##### Square Matrix
+```
+
+
+
+## Complex Numbers
+
+
+
+## Matrices
+
+### Creating
+
+#### Square Matrix
 ```csharp
 //Create square matrix of size 3x3
 Matrix matrix = new Matrix(3);
 ```
-##### Matrix of any size
+#### Matrix of any size
 ```csharp
 //Create matrix of any size (i.e. 5x3)
 Matrix matrix = new Matrix(5, 3);
 ```
-##### Zero Matrix
+#### Zero Matrix
 ```csharp
 Matrix zero = Matrix.Zero(rows, cols);
 //..or..
@@ -44,7 +151,7 @@ Matrix zeroSquare = Matrix.Zero(size);
 ```csharp
 Matrix identity = Matrix.Identity(size);
 ```
-#### Populating the matrix
+### Populating the matrix
 ```csharp
 //Populate Matrix
 matrix[1, 1] = 5.0;
@@ -55,24 +162,24 @@ matrix.Randomize(-5,0, 10.0);
 //..or with random values between 0 and 1
 matrix.Randomize();
 ```
-#### Math operations
+### Math operations
 ```csharp
 Matrix a = new Matrix(3, 3);
 Matrix b = new Matrix(3, 3);
 ```
-##### Addition
+#### Addition
 ```csharp
 Matrix sum = a + b;
 //..or..
 a.Add(b);
 ```
-##### Subtraction
+#### Subtraction
 ```csharp
 Matrix diff = a - b;
 //..or..
 a.Add(b);
 ```
-##### Multiplication
+#### Multiplication
 ```csharp
 //multiplication with scalar
 Matrix product = a * 3.0;
@@ -83,22 +190,22 @@ Matrix product = a * b;
 //..or..
 a.Multiply(b);
 ```
-##### Hadamard Product
+#### Hadamard Product
 ```csharp
 a.HadamardProduct(b);
 ```
-##### Inversion
+#### Inversion
 ```csharp
 Matrix inverse = !a;
 //..or..
 a.Inverse();
 ```
-##### Transposition
+#### Transposition
 ```csharp
 Matrix r = new Matrix(5, 4);
 r.Transpose();
 ```
-##### Mapping elements with a function
+#### Mapping elements with a function
 ```csharp
 Matrix r = new Matrix(5, 4);
 r.Map(Math.Sin); //Apply Sine function to every matrix element
@@ -112,7 +219,7 @@ public double MyFunction(double param)
 r.Map(MyFunction);
 //[...]
 ```
-#### Comparing the matrices
+### Comparing the matrices
 ```csharp
 //Equality
 if(a == b) {}
@@ -128,8 +235,8 @@ if(a >= b) {}
 if(a <= b) {}
 
 ```
-#### Creating Transformation Matrices
-##### Rotation
+### Creating Transformation Matrices
+#### Rotation
 ```csharp
 //2D
 Matrix rotation2D = Matrix.Rotation2D(angleInDegrees);
@@ -138,7 +245,7 @@ Matrix rotation3D = Matrix.Rotation3DX(angleInDegrees);
 Matrix rotation3D = Matrix.Rotation3DY(angleInDegrees);
 Matrix rotation3D = Matrix.Rotation3DZ(angleInDegrees);
 ```
-##### Scaling
+#### Scaling
 ```csharp
 Matrix scaling = Matrix.Scaling(factorX, factorY, factorZ);
 ```
@@ -149,9 +256,9 @@ Matrix translation = Matrix.Translation(moveX, moveY, moveZ);
 
 
 
-### Fractions
+## Fractions
 
-##### Creation
+### Creation
 
 ```csharp
 //fraction can be created with numerator and denominator as parameters:
@@ -185,7 +292,7 @@ Console.WriteLine($"Fraction = {fraction.ToString()}");
 //Fraction = 3333/10000
 ```
 
-##### Assigning the value
+### Assigning the value
 
 Value can be initially assigned at creation, as seen in [previous section](#creation).
 If value needs to be assigned afterwards afterwards, there are several possible ways.
@@ -211,9 +318,9 @@ Console.WriteLine($"Fraction = {fraction.ToString()}, AsFloat = {fraction.AsFloa
 //Fraction = 1/2, AsFloat = 0.5
 ```
 
-##### Available Mathematical Operations
+### Available Mathematical Operations
 
-###### Addition
+#### Addition
 
 ```csharp
 //addition of two fractions
@@ -237,7 +344,7 @@ Console.WriteLine($"Fraction = {result.ToString()}, reduced fraction = {result.R
 //Fraction = 7/10, reduced fraction = 7/10
 ```
 
-###### Subtraction
+#### Subtraction
 
 ```csharp
 //subtraction of two fractions
@@ -261,7 +368,7 @@ Console.WriteLine($"Fraction = {result.ToString()}, reduced fraction = {result.R
 //Fraction = -3/10, reduced fraction = -3/10
 ```
 
-###### Multiplication
+#### Multiplication
 
 ```csharp
 //multiplication of two fractions
@@ -285,7 +392,7 @@ Console.WriteLine($"Fraction = {result.ToString()}, reduced fraction = {result.R
 //Fraction = 1/10, reduced fraction = 1/10
 ```
 
-###### Division
+#### Division
 
 ```csharp
 //division of two fractions
@@ -309,9 +416,9 @@ Console.WriteLine($"Fraction = {result.ToString()}, reduced fraction = {result.R
 //Fraction = 2/5, reduced fraction = 2/5
 ```
 
-##### Other operations
+### Other operations
 
-###### Reduce
+#### Reduce
 
 ```csharp
 var fraction = new Fraction(3, 15);
@@ -323,7 +430,7 @@ Console.WriteLine($"Fraction reduced = {fraction.ToString()}");
 //Fraction reduced = 1/5
 ```
 
-###### Inverse
+#### Inverse
 
 ```csharp
 fraction = new Fraction(3, 15);
@@ -338,7 +445,7 @@ Console.WriteLine($"Fraction inversed and reduced = {fraction.ToString()}");
 //Fraction inversed and reduced = 5/1
 ```
 
-##### Continued Fractions
+### Continued Fractions
 
 Also support for continued fractions is added. Continued fraction can be assigned at fraction creation
 or assigned at runtime.
@@ -391,7 +498,7 @@ Console.WriteLine($"Fraction (45/16) = {fraction.ToString()}, AsDouble = {fracti
 //Fraction (45/16) = 45/16, AsDouble = 2,8125, AsContinuedFraction = [2;1,4,3]
 ```
 
-##### Output
+### Output
 
 For output of resulting fraction method ```ToString()``` can be used, which results in a string,
 representing the fraction.
@@ -404,7 +511,7 @@ Console.WriteLine($"Fraction = {fraction.ToString()}");
 //Fraction = 3/15
 ```
 
-###### Display Modifiers (Options)
+#### Display Modifiers (Options)
 
 Several modifiers can be used. They are sent to ```ToString()``` method as parameter.
 Modifiers are in ```DisplayOptions``` enum, described below:
@@ -453,17 +560,42 @@ OutputFractionWithModifiers(fraction);
 
 
 
-### Easings
+## Easings
+
+### Usage
+
+```csharp
+var easings = new EasingFunctions();
+
+//quadratic
+var easedInOutQuad = easings.EaseInOutQuad(x);
+
+//cubic
+var easedInOutCubic = easings.EaseInOutCubic(x);
+
+//quartic
+var easedInOutQuart = easings.EaseInOutQuart(x);
+
+//quintic
+var easedInOutQuint = easings.EaseInOutQuint(x);
+
+var easedInOutBounce = easings.EaseInOutBounce(x);
+var easedInOutElastic = easings.EaseInOutElastic(x);
+var easedInOutExpo = easings.EaseInOutExpo(x);
+var easedInOutCirc = easings.EaseInOutCirc(x);
+var easedInOutBack = easings.EaseInOutBack(x);
+var easedInOutSine = easings.EaseInOutSine(x);
+```
 
 
 
-### Statistics
+## Statistics
 
 
 
-### Interpolations
+## Interpolations
 
-#### Usage
+### Usage
 
 ```csharp
 using MathExtended.Interpolations;
@@ -496,7 +628,7 @@ double interpolatedValue = interpolation.Interpolate(3.5);
 
 
 
-### Random
+## Random
 
 Pure C# RANMAR Random Number Generator Algorithm Library.
 
@@ -530,7 +662,7 @@ Original ©:
 
 
 
-#### Usage
+### Usage
 
 ```csharp
 int factor = 4096 * 4096;
@@ -569,7 +701,7 @@ Console.WriteLine($"Double = {ranmar.NextDouble()}");
 
 
 
-### Regressions
+## Regressions
 
 
 
