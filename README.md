@@ -447,7 +447,7 @@ OutputFractionWithModifiers(fraction);
 //Output (in image):
 ```
 
-![foo](Documentation/DisplayOptionsOutput.png "Display Options Output")
+![foo](doc/DisplayOptionsOutput.png "Display Options Output")
 
 
 
