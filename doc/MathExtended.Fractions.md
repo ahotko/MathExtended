@@ -1,4 +1,4 @@
-# MathExtended
+# MathExtended.Fractions
 
 Pure C# MathLibrary.
 
@@ -6,158 +6,11 @@ Pure C# MathLibrary.
 
 MathExtended is project by Ales Hotko and was first released in 2020. It's licensed under the MIT license.
 
-------
-
-[TOC]
-
-------
 
 
+# Usage
 
-# Libraries
-
-## Common
-
-[Common](doc/MathExtended.Common.md)
-
-
-
-## Complex Numbers
-
-
-
-## Matrices
-
-### Creating
-
-#### Square Matrix
-```csharp
-//Create square matrix of size 3x3
-Matrix matrix = new Matrix(3);
-```
-#### Matrix of any size
-```csharp
-//Create matrix of any size (i.e. 5x3)
-Matrix matrix = new Matrix(5, 3);
-```
-#### Zero Matrix
-```csharp
-Matrix zero = Matrix.Zero(rows, cols);
-//..or..
-Matrix zeroSquare = Matrix.Zero(size);
-```
-##### Identity Matrix
-```csharp
-Matrix identity = Matrix.Identity(size);
-```
-### Populating the matrix
-```csharp
-//Populate Matrix
-matrix[1, 1] = 5.0;
-matrix[1, 2] = 5.0;
-matrix[1, 3] = 5.0;
-//...or populate with random values between -5.0 and 10.0
-matrix.Randomize(-5,0, 10.0);
-//..or with random values between 0 and 1
-matrix.Randomize();
-```
-### Math operations
-```csharp
-Matrix a = new Matrix(3, 3);
-Matrix b = new Matrix(3, 3);
-```
-#### Addition
-```csharp
-Matrix sum = a + b;
-//..or..
-a.Add(b);
-```
-#### Subtraction
-```csharp
-Matrix diff = a - b;
-//..or..
-a.Add(b);
-```
-#### Multiplication
-```csharp
-//multiplication with scalar
-Matrix product = a * 3.0;
-//..or..
-a.Multiply(3.0);
-//multiplication with another matrix
-Matrix product = a * b;
-//..or..
-a.Multiply(b);
-```
-#### Hadamard Product
-```csharp
-a.HadamardProduct(b);
-```
-#### Inversion
-```csharp
-Matrix inverse = !a;
-//..or..
-a.Inverse();
-```
-#### Transposition
-```csharp
-Matrix r = new Matrix(5, 4);
-r.Transpose();
-```
-#### Mapping elements with a function
-```csharp
-Matrix r = new Matrix(5, 4);
-r.Map(Math.Sin); //Apply Sine function to every matrix element
-//or own function
-public double MyFunction(double param)
-{
-	return param * 42.0;
-}
-
-//[...]
-r.Map(MyFunction);
-//[...]
-```
-### Comparing the matrices
-```csharp
-//Equality
-if(a == b) {}
-//..or..
-if(a != b) {}
-//..or..
-if(a > b) {}
-//..or..
-if(a < b) {}
-//..or..
-if(a >= b) {}
-//..or..
-if(a <= b) {}
-
-```
-### Creating Transformation Matrices
-#### Rotation
-```csharp
-//2D
-Matrix rotation2D = Matrix.Rotation2D(angleInDegrees);
-//3D around X, Y or Z axis
-Matrix rotation3D = Matrix.Rotation3DX(angleInDegrees);
-Matrix rotation3D = Matrix.Rotation3DY(angleInDegrees);
-Matrix rotation3D = Matrix.Rotation3DZ(angleInDegrees);
-```
-#### Scaling
-```csharp
-Matrix scaling = Matrix.Scaling(factorX, factorY, factorZ);
-```
-#### Translation
-```csharp
-Matrix translation = Matrix.Translation(moveX, moveY, moveZ);
-```
-
-
-
-## Fractions
-
-### Creation
+## Creation
 
 ```csharp
 //fraction can be created with numerator and denominator as parameters:
@@ -191,7 +44,7 @@ Console.WriteLine($"Fraction = {fraction.ToString()}");
 //Fraction = 3333/10000
 ```
 
-### Assigning the value
+## Assigning the value
 
 Value can be initially assigned at creation, as seen in [previous section](#creation).
 If value needs to be assigned afterwards afterwards, there are several possible ways.
@@ -217,9 +70,9 @@ Console.WriteLine($"Fraction = {fraction.ToString()}, AsFloat = {fraction.AsFloa
 //Fraction = 1/2, AsFloat = 0.5
 ```
 
-### Available Mathematical Operations
+## Available Mathematical Operations
 
-#### Addition
+### Addition
 
 ```csharp
 //addition of two fractions
@@ -243,7 +96,7 @@ Console.WriteLine($"Fraction = {result.ToString()}, reduced fraction = {result.R
 //Fraction = 7/10, reduced fraction = 7/10
 ```
 
-#### Subtraction
+### Subtraction
 
 ```csharp
 //subtraction of two fractions
@@ -267,7 +120,7 @@ Console.WriteLine($"Fraction = {result.ToString()}, reduced fraction = {result.R
 //Fraction = -3/10, reduced fraction = -3/10
 ```
 
-#### Multiplication
+### Multiplication
 
 ```csharp
 //multiplication of two fractions
@@ -291,7 +144,7 @@ Console.WriteLine($"Fraction = {result.ToString()}, reduced fraction = {result.R
 //Fraction = 1/10, reduced fraction = 1/10
 ```
 
-#### Division
+### Division
 
 ```csharp
 //division of two fractions
@@ -315,9 +168,9 @@ Console.WriteLine($"Fraction = {result.ToString()}, reduced fraction = {result.R
 //Fraction = 2/5, reduced fraction = 2/5
 ```
 
-### Other operations
+## Other operations
 
-#### Reduce
+### Reduce
 
 ```csharp
 var fraction = new Fraction(3, 15);
@@ -329,7 +182,7 @@ Console.WriteLine($"Fraction reduced = {fraction.ToString()}");
 //Fraction reduced = 1/5
 ```
 
-#### Inverse
+### Inverse
 
 ```csharp
 fraction = new Fraction(3, 15);
@@ -344,7 +197,7 @@ Console.WriteLine($"Fraction inversed and reduced = {fraction.ToString()}");
 //Fraction inversed and reduced = 5/1
 ```
 
-### Continued Fractions
+## Continued Fractions
 
 Also support for continued fractions is added. Continued fraction can be assigned at fraction creation
 or assigned at runtime.
@@ -397,7 +250,7 @@ Console.WriteLine($"Fraction (45/16) = {fraction.ToString()}, AsDouble = {fracti
 //Fraction (45/16) = 45/16, AsDouble = 2,8125, AsContinuedFraction = [2;1,4,3]
 ```
 
-### Output
+## Output
 
 For output of resulting fraction method ```ToString()``` can be used, which results in a string,
 representing the fraction.
@@ -410,7 +263,7 @@ Console.WriteLine($"Fraction = {fraction.ToString()}");
 //Fraction = 3/15
 ```
 
-#### Display Modifiers (Options)
+### Display Modifiers (Options)
 
 Several modifiers can be used. They are sent to ```ToString()``` method as parameter.
 Modifiers are in ```DisplayOptions``` enum, described below:
@@ -455,154 +308,7 @@ OutputFractionWithModifiers(fraction);
 //Output (in image):
 ```
 
-![foo](doc/DisplayOptionsOutput.png "Display Options Output")
-
-
-
-## Easings
-
-### Usage
-
-```csharp
-var easings = new EasingFunctions();
-
-//quadratic
-var easedInOutQuad = easings.EaseInOutQuad(x);
-
-//cubic
-var easedInOutCubic = easings.EaseInOutCubic(x);
-
-//quartic
-var easedInOutQuart = easings.EaseInOutQuart(x);
-
-//quintic
-var easedInOutQuint = easings.EaseInOutQuint(x);
-
-var easedInOutBounce = easings.EaseInOutBounce(x);
-var easedInOutElastic = easings.EaseInOutElastic(x);
-var easedInOutExpo = easings.EaseInOutExpo(x);
-var easedInOutCirc = easings.EaseInOutCirc(x);
-var easedInOutBack = easings.EaseInOutBack(x);
-var easedInOutSine = easings.EaseInOutSine(x);
-```
-
-
-
-## Statistics
-
-
-
-## Interpolations
-
-### Usage
-
-```csharp
-using MathExtended.Interpolations;
-
-var interpolation = new Interpolation();
-interpolation.Add(1, 2);
-interpolation.Add(5, 8);
-interpolation.Add(7.7, 5);
-interpolation.Add(10, 15);
-interpolation.Add(11, 11.3);
-
-//Linear interpolation
-double interpolatedValueLinear = interpolation.Linear(3.5);
-//...or...
-interpolation.Linear();
-double interpolatedValueLinear = interpolation.Interpolate(3.5);
-
-//Spline interpolation
-double interpolatedValue = interpolation.Spline(3.5);
-//...or...
-interpolation.Spline();
-double interpolatedValue = interpolation.Interpolate(3.5);	
-
-//Cosine interpolation
-double interpolatedValue = interpolation.Cosine(3.5);
-//...or...
-interpolation.Cosine();
-double interpolatedValue = interpolation.Interpolate(3.5);	
-```
-
-
-
-## Random
-
-Pure C# RANMAR Random Number Generator Algorithm Library.
-
-
-
-Original ©:
-
-> RANMAR pseudo-random number generator
-> This random number generator originally appeared in "Toward a Universal
-> Random Number Generator" by George Marsaglia and Arif Zaman.
-> Florida State University Report: FSU-SCRI-87-50 (1987)
-> It was later modified by F. James and published in "A Review of Pseudo-
-> random Number Generators"
-> THIS IS THE BEST KNOWN RANDOM NUMBER GENERATOR AVAILABLE.
-> (However, a newly discovered technique can yield
-> a period of 10^600. But that is still in the development stage.)
-> It passes ALL of the tests for random number generators and has a period
-> of 2^144, is completely portable (gives bit identical results on all
-> machines with at least 24-bit mantissas in the floating point
-> representation).
-> The algorithm is a combination of a Fibonacci sequence (with lags of 97 and 33, and operation "subtraction plus one, modulo one") and an "arithmetic sequence" (using subtraction).
->
-> C language version was written by Jim Butler, and was based on a
-> FORTRAN program posted by David LaSalle of Florida State University.
-> Adapted for Delphi by Anton Zhuchkov (fireton@mail.ru) in February, 2002.
-> Converted into a class by Primoz Gabrijelcic (gabr@17slon.com) in November, 2002.
-> (Url: https://github.com/gabr42/GpDelphiUnits/blob/master/src/GpRandomGen.pas)
->
-> Adapted for C# by Ales Hotko (https://github.com/ahotko) in May, 2020
-> (from Delphi (gabr42) and C (Url: https://www.pell.portland.or.us/~orc/Code/Misc/random.c))
-
-
-
-### Usage
-
-```csharp
-int factor = 4096 * 4096;
-var ranmar = new Ranmar(1802, 9373);
-
-//To validate RANMAR generator, use the following procedure (described in original source):
-// - set Seed1 to 1802
-// - set Seed2 to 9373
-// - Generate 20000 random numbers
-// - next 6 generated numbers multiplied by 4096*4096 must be:
-//   6533892, 14220222, 7275067, 6172232, 8354498, 10633180
-
-for (int i = 0; i < 20006; i++)
-{
-    int generatedNumber = ranmar.Next(factor);
-    if (i < 20000) continue;
-    Console.WriteLine($"{i + 1}. {generatedNumber}");
-}
-
-//Output:
-//20001. 6533892
-//20002. 14220222
-//20003. 7275067
-//20004. 6172232
-//20005. 8354498
-//20006. 10633180
-```
-
-Also ```double``` can be generated:
-```csharp
-Console.WriteLine($"Double = {ranmar.NextDouble()}");
-
-//Output:
-//Double = 0,339674651622772
-```
-
-
-
-## Regressions
-
-
+![foo](DisplayOptionsOutput.png "Display Options Output")
 
 
 
