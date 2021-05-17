@@ -486,7 +486,7 @@ var easedInOutBack = easings.EaseInOutBack(x);
 var easedInOutSine = easings.EaseInOutSine(x);
 ```
 
-
+![](doc/Easings.gif)
 
 ## Statistics
 
