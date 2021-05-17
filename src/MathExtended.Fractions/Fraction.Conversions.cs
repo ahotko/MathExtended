@@ -107,5 +107,25 @@ namespace MathExtended.Fractions
                 ParseContinuedFraction(value);
             }
         }
+
+        public static explicit operator double(Fraction entity)
+        {
+            return entity.AsDouble;
+        }
+
+        public static explicit operator Fraction(double value)
+        {
+            return new Fraction(value);
+        }
+
+        public static explicit operator float(Fraction entity)
+        {
+            return entity.AsFloat;
+        }
+
+        public static explicit operator Fraction(float value)
+        {
+            return new Fraction(value);
+        }
     }
 }

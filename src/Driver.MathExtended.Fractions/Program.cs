@@ -140,6 +140,15 @@ namespace MathExtended.Fractions.Driver
             fraction.AsFloat = 0.5f;
             Console.WriteLine($"Fraction = {fraction.ToString()}, AsFloat = {fraction.AsFloat}");
 
+            //casting
+            Title("Casting");
+            var castAsDouble = (double)fraction;
+            Console.WriteLine($"Fraction = {fraction.ToString()}, Cast As Double = {castAsDouble}");
+
+            double d = 0.25;
+            var castAsFraction = (Fraction)d;
+            Console.WriteLine($"Double = {d}, Cast As Fraction = {castAsFraction.ToString()}");
+
             Title("Different outputs");
             fraction = new Fraction(10, 5);
             OutputFractionWithModifiers(fraction);
