@@ -51,6 +51,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.MathExtended.Statist
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.MathExtended.Common", "Driver.MathExtended.Common\Driver.MathExtended.Common.csproj", "{2315C2E4-BA98-4D20-BA42-DFDC2C79F575}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathExtended.Geodesy", "MathExtended.Geodesy\MathExtended.Geodesy.csproj", "{87DF9A0B-9AC4-465B-BA2F-B7A998416258}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MathExtended.Geodesy", "Test.MathExtended.Geodesy\Test.MathExtended.Geodesy.csproj", "{FF1139CF-5E27-4019-8764-3C1715EF7DBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,6 +149,14 @@ Global
 		{2315C2E4-BA98-4D20-BA42-DFDC2C79F575}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2315C2E4-BA98-4D20-BA42-DFDC2C79F575}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2315C2E4-BA98-4D20-BA42-DFDC2C79F575}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87DF9A0B-9AC4-465B-BA2F-B7A998416258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87DF9A0B-9AC4-465B-BA2F-B7A998416258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87DF9A0B-9AC4-465B-BA2F-B7A998416258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87DF9A0B-9AC4-465B-BA2F-B7A998416258}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF1139CF-5E27-4019-8764-3C1715EF7DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF1139CF-5E27-4019-8764-3C1715EF7DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF1139CF-5E27-4019-8764-3C1715EF7DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF1139CF-5E27-4019-8764-3C1715EF7DBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -163,6 +175,7 @@ Global
 		{49985F76-ABCA-4073-A156-610187F428BC} = {61DD3C31-2F84-4B40-88F2-AF360B265202}
 		{F941248B-46A5-464A-B020-1DCD19B3B223} = {27624CA6-4275-40C7-ADB6-2A373085B477}
 		{2315C2E4-BA98-4D20-BA42-DFDC2C79F575} = {27624CA6-4275-40C7-ADB6-2A373085B477}
+		{FF1139CF-5E27-4019-8764-3C1715EF7DBA} = {61DD3C31-2F84-4B40-88F2-AF360B265202}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {02FD1503-111C-4062-842F-6136172AF0D1}
