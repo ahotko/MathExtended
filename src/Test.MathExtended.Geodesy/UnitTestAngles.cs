@@ -8,9 +8,11 @@ namespace Test.MathExtended.Geodesy
     public class UnitTestAngles
     {
         [TestMethod]
-        public void AngleConversion()
+        public void AngleConversionDms()
         {
             var dms = new Angle(45, 30, 10);
+
+            Assert.AreEqual(45.5, dms.DecimalDegrees, 0.01, "DMS Conversion Failed!");
         }
     }
 }
