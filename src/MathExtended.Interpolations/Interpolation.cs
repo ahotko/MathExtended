@@ -90,6 +90,7 @@ namespace MathExtended.Interpolations
         {
             if (x > Points[Points.Count - 1].X || x < Points[0].X)
                 throw new ArgumentOutOfRangeException(nameof(x));
+
             return Interpolate(_interpolationStrategy, x);
         }
 
@@ -118,10 +119,8 @@ namespace MathExtended.Interpolations
                 SetInterpolation(new Linear());
                 return double.NaN;
             }
-            if (_linearInterpolation is null)
-            {
-                _linearInterpolation = new Linear();
-            }
+
+            _linearInterpolation ??= new Linear();
             return Interpolate(_linearInterpolation, x);
         }
 
@@ -132,10 +131,8 @@ namespace MathExtended.Interpolations
                 SetInterpolation(new Spline());
                 return double.NaN;
             }
-            if (_splineInterpolation is null)
-            {
-                _splineInterpolation = new Spline();
-            }
+
+            _splineInterpolation ??= new Spline();
             return Interpolate(_splineInterpolation, x);
         }
 
@@ -146,10 +143,8 @@ namespace MathExtended.Interpolations
                 SetInterpolation(new Cosine());
                 return double.NaN;
             }
-            if (_cosineInterpolation is null)
-            {
-                _cosineInterpolation = new Cosine();
-            }
+
+            _cosineInterpolation ??= new Cosine();
             return Interpolate(_cosineInterpolation, x);
         }
 
@@ -160,10 +155,8 @@ namespace MathExtended.Interpolations
                 SetInterpolation(new Parabolic());
                 return double.NaN;
             }
-            if (_parabolicInterpolation is null)
-            {
-                _parabolicInterpolation = new Parabolic();
-            }
+
+            _parabolicInterpolation ??= new Parabolic();
             return Interpolate(_parabolicInterpolation, x);
         }
     }

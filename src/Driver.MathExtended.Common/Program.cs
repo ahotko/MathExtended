@@ -78,9 +78,9 @@ namespace Driver.MathExtended.Common
 
             for (double x = -5.0; x <= 5.0; x += 0.5)
             {
-                double mapping1 = Wrapping.Wrap(x, -1, 1);
+                double wrapping = Wrapping.Wrap(x, -1, 1);
 
-                Console.WriteLine($"{x,5:N1} {mapping1,9:N1}");
+                Console.WriteLine($"{x,5:N1} {wrapping,9:N1}");
             }
 
             Console.WriteLine($"===================================================================================");
