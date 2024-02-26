@@ -39,8 +39,8 @@ namespace Test.MathExtended.Statistics
             var distribution = new Distribution();
             distribution.AddRange(new double[] { 5.0, 10.0, 15.0, 20.0 });
 
-            Assert.AreEqual(0.009477931, distribution.Gauss(0), 0.0001);
-            Assert.AreEqual(0.061803873, distribution.Gauss(12.5), 0.0001);
+            Assert.AreEqual(0.009477931, distribution.GetGaussValue(0), 0.0001);
+            Assert.AreEqual(0.061803873, distribution.GetGaussValue(12.5), 0.0001);
         }
 
         [TestMethod]

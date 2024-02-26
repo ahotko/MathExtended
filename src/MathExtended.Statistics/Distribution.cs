@@ -21,12 +21,14 @@ namespace MathExtended.Statistics
 
         public void AddRange(IEnumerable<double> values)
         {
-            foreach (double value in values) Add(value);
+            foreach (double value in values)
+                Add(value);
         }
 
         public void AddRange(IEnumerable<float> values)
         {
-            foreach (float value in values) Add(value);
+            foreach (float value in values)
+                Add(value);
         }
 
         public void Add(double value)
@@ -41,7 +43,11 @@ namespace MathExtended.Statistics
         }
 
         public int Count { get; private set; }
+
         public double Average => (_sum / Count);
+
+        public double Mean => GetMeanValue(MinValue, MaxValue);
+
         public double StandardDeviation
         {
             get
@@ -129,7 +135,7 @@ namespace MathExtended.Statistics
         /// </summary>
         /// <param name="x"></param>
         /// <returns></returns>
-        public double Gauss(double x)
+        public double GetGaussValue(double x)
         {
             //Source: https://en.wikipedia.org/wiki/Normal_distribution
 
@@ -137,6 +143,11 @@ namespace MathExtended.Statistics
             double avg = Average;
 
             return (1.0 / (stdDev * Math.Sqrt(2.0 * Math.PI))) * Math.Exp(-0.5 * Math.Pow((x - avg) / stdDev, 2));
+        }
+
+        public double GetMeanValue(double firstValue, double secondValue)
+        {
+            return (firstValue + secondValue) / 2;
         }
     }
 }
